@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import  Test from "./Test"
 import styles from "./App.module.css"
-import { Title } from "./Components";
-import Bootstrap from "./Bootstrap";
 
-import './tailwind.css';
+
+
+//import './tailwind.css';
+import './style.scss'
 import Tailwind from "./Tailwind";
 
 
@@ -22,7 +23,12 @@ function App() {
     <div className={styles.App}>
       test
       <img src="/logo192.png" alt=""></img>
-      <Title> Enviroment : <b>{process.env.NODE_ENV}</b> </Title>
+      <h1> Enviroment : <b>{process.env.NODE_ENV}</b> </h1>
+
+      <p className="env">
+        {process.env.REACT_APP_API_URL}
+        <span>test</span>
+      </p>
 
       {process.env.NODE_ENV === "production" && (
         <>
@@ -30,19 +36,13 @@ function App() {
         </>
       )}
 
-      <Title>
-        {process.env.REACT_APP_API_URL}
-      </Title>
-
-      <Title theme="dark">
-        {process.env.REACT_APP_API_URL}
-      </Title>
+      
 
       <Test/>
 
-      <Bootstrap/>
+      
 
-      <Tailwind/>
+      <Tailwind/> 
 
     </div>
   );
